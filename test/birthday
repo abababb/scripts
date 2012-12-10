@@ -1,0 +1,21 @@
+#!/bin/bash
+# Program:
+#   User inputs his first name and last name. Program shows his full name.
+# History:
+# 2012/12/05 Setokaiba  First release
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+read -p "Please input your birthday (MMDD, ex> 0709): " bir
+now=`date +%m%d`
+if [ "$bir" == "$now" ];then
+    echo "Happy Birthday to you!"
+elif [ "$bir" -gt "$now" ];then
+    year=`date +%Y`
+    total_d=$(($((`date --date="$year$bir" +%s`-`date +%s`))/60/60/24))
+    echo "Your birthday will be $total_d later"
+else
+    year=$((`date +%Y`+1))
+    total_d=$(($((`date --date="$year$bir" +%s`-`date +%s`))/60/60/24))
+    echo "Your birthday will be $total_d later"
+fi
