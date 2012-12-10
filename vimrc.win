@@ -1,3 +1,6 @@
+"<Leader> key is ,
+let mapleader=","
+
 " set root
 cd /xampp/htdocs
 " ctags setting
@@ -125,6 +128,10 @@ map <F6> :TlistToggle<CR>
   "fold a block
   " qa/{<cr>zf%q
    map <F7> 200@a
+
+"set clear php script
+  " qb?<\?php<cr>jc/?><cr><esc>:nohl<esc>q
+   map <Leader>c @b
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
