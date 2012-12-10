@@ -1,0 +1,155 @@
+" set root
+cd /xampp/htdocs
+" ctags setting
+set tags=/xampp/htdocs/php.tags
+" disable VI's compatible mode..
+set nocompatible
+" set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,default,latin1
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+filetype plugin indent on
+
+" For all text files set 'textwidth' to 78 characters.
+autocmd FileType text setlocal textwidth=78
+
+" Enable syntax highlight
+syntax enable
+ 
+" Show line number
+set nu
+" show matching bracets
+set showmatch
+ 
+" Basic editing options
+set expandtab
+set shiftwidth=2
+ 
+au FileType html,python,vim,javascript setl shiftwidth=2
+au FileType html,python,vim,javascript setl tabstop=2
+au FileType java,php setl shiftwidth=4
+au FileType java,php setl tabstop=4
+ 
+set smarttab
+set lbr
+set tw=0
+ 
+"Auto indent
+set ai
+ 
+" Smart indet
+set si
+ 
+" C-style indeting
+set cindent
+ 
+" Wrap lines
+set wrap
+
+"set gui options
+if has("gui_running")
+  set guifont=Consolas:h12
+  " set color schema
+  colorscheme peachpuff
+endif
+
+" Sets how many lines of history VIM har to remember
+set history=400
+ 
+"Always display the current cursor position in the lower right corner of the Vim window.  
+set ruler
+
+" display incomplete commands
+set showcmd		
+
+" Set to auto read when a file is changed from the outside
+set autoread
+ 
+" Have the mouse enabled all the time:
+set mouse=a
+ 
+" Do not redraw, when running macros.. lazyredraw
+set lz
+ 
+" set 7 lines to the curors - when moving vertical..
+set so=7
+ 
+" The commandbar is 2 high
+set cmdheight=2
+ 
+" Change buffer - without saving
+set hid
+ 
+" Ignore case when searching
+" set ignorecase
+
+ " do incremental searching
+set incsearch		
+
+" Set magic on
+set magic
+ 
+" No sound on errors.
+set noerrorbells
+set novisualbell
+set t_vb=
+ 
+" How many tenths of a second to blink
+set mat=4
+ 
+" Highlight search things
+set hlsearch
+ 
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
+ 
+" smart backspace
+set backspace=start,indent,eol
+ 
+" switch buffers with Tab
+map <C-Tab> :bn<CR>
+map <S-Tab> :bp<CR>
+
+" NERDTree
+map <F10> :NERDTreeToggle<CR>
+
+" taglist
+map <F6> :TlistToggle<CR>
+
+"set fold
+  "fold a block
+  " qa/{<cr>zf%q
+   map <F7> 200@a
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" taglist
+let Tlist_Auto_Highlight_Tag = 1
+let Tlist_Auto_Open = 1
+let Tlist_Auto_Update = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Compact_Format = 0
+let Tlist_Display_Prototype = 0
+let Tlist_Display_Tag_Scope = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Exit_OnlyWindow = 0
+let Tlist_File_Fold_Auto_Close = 0
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Hightlight_Tag_On_BufEnter = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Max_Submenu_Items = 1
+let Tlist_Max_Tag_Length = 30
+let Tlist_Process_File_Always = 0
+let Tlist_Show_Menu = 0
+let Tlist_Show_One_File = 0
+let Tlist_Sort_Type = "order"
+let Tlist_Use_Horiz_Window = 0
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
+let tlist_php_settings = 'php;c:class;i:interfaces;d:constant;f:function'
+
