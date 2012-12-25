@@ -54,11 +54,11 @@ msgstr ""
 
 #: author.php:53 content.php:53
 msgid "About %s"
-msgstr ""
+msgstr "关于"
 
 #: category.php:21
 msgid "Category Archives: %s"
-msgstr ""
+msgstr "分类历史"
 
 #: comments.php:31
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -68,15 +68,15 @@ msgstr[1] ""
 
 #: comments.php:42
 msgid "Comment navigation"
-msgstr ""
+msgstr "评论导航"
 
 #: comments.php:43
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "上一个评论"
 
 #: comments.php:44
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "下一个评论"
 
 #: comments.php:53
 msgid "Comments are closed."
@@ -96,7 +96,7 @@ msgstr ""
 #: content-aside.php:23 content-image.php:23 content-link.php:21
 #: content-quote.php:20 content-status.php:27 content.php:28
 msgid "Leave a reply"
-msgstr ""
+msgstr "留言"
 
 #: content-aside.php:23 content-image.php:23 content-link.php:21
 #: content-quote.php:20 content-status.php:27 content.php:28
@@ -112,15 +112,15 @@ msgstr ""
 #: content-page.php:21 content-quote.php:23 content-status.php:30
 #: content.php:46 functions.php:309 image.php:37
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: content-link.php:12
 msgid "Link"
-msgstr ""
+msgstr "链接"
 
 #: content-none.php:13 index.php:49 search.php:34
 msgid "Nothing Found"
-msgstr ""
+msgstr "无法找到"
 
 #: content-none.php:17 index.php:53
 msgid ""
@@ -130,7 +130,7 @@ msgstr ""
 
 #: content-page.php:18 content.php:40 image.php:92
 msgid "Pages:"
-msgstr ""
+msgstr "页面"
 
 #: content.php:14
 msgid "Featured post"

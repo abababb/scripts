@@ -97,7 +97,7 @@
 	<?php elseif ( is_date() ) : ?>
 
 		<div class="loop-meta">
-			<h1 class="loop-title"><?php _e( '历史档案', 'uridimmu' ); ?></h1>
+			<h1 class="loop-title"><?php _e( '历史', 'uridimmu' ); ?></h1>
 
 			<div class="loop-description">
 			</div><!-- .loop-description -->

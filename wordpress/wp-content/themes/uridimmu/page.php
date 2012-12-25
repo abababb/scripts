@@ -36,8 +36,8 @@ get_header(); // Loads the header.php template. ?>
                         </header><!-- .entry-header -->
 
 						<div class="entry-content">
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'uidimmu' ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'uidimmu' ), 'after' => '</p>' ) ); ?>
+							<?php the_content( __( '更多 <span class="meta-nav">&rarr;</span>', 'uidimmu' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( '页面:', 'uidimmu' ), 'after' => '</p>' ) ); ?>
 						</div><!-- .entry-content -->
 
                         <footer class="entry-footer">

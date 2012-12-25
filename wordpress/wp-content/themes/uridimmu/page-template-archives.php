@@ -35,7 +35,7 @@ get_header(); // Loads the header.php template. ?>
                         </header><!-- .entry-header -->
 
 						<div class="entry-content">
-							<?php the_content( __( '继续阅读 <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
+							<?php the_content( __( '更多 <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
 
 							<h2><?php _e( '分类归档', 'uridimmu' ); ?></h2>
 

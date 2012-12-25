@@ -60,7 +60,7 @@ msgstr ""
 
 #: ../comment.php:30
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "评论等待批准"
 
 #: ../comments.php:14
 msgid "Please do not load this page directly. Thanks!"

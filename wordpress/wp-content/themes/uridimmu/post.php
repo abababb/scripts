@@ -37,8 +37,8 @@ get_header(); // Loads the header.php template. ?>
                         </header><!-- .entry-header -->
 
 						<div class="entry-content">
-							<?php the_content( __( '继续阅读 <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'uridimmu' ), 'after' => '</p>' ) ); ?>
+							<?php the_content( __( '更多 <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( '页面:', 'uridimmu' ), 'after' => '</p>' ) ); ?>
 						</div><!-- .entry-content -->
 
                         <footer class="entry-footer">

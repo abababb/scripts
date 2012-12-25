@@ -11,7 +11,7 @@
 
 /* Kill the page if trying to access this template directly. */
 if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
-	die( __( 'Please do not load this page directly. Thanks!', 'uridimmu' ) );
+	die( __( '请勿直接加载本页，谢谢。', 'uridimmu' ) );
 
 /* If a post password is required or no comments are given and comments/pings are closed, return. */
 if ( post_password_required() || ( !have_comments() && !comments_open() && !pings_open() ) )
@@ -26,13 +26,13 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
 
 			<?php if ( have_comments() ) : ?>
 
-				<h3 id="comments-number" class="comments-header"><?php comments_number( __( 'No Responses', 'uridimmu' ), __( 'One Response', 'uridimmu' ), __( '% Responses', 'uridimmu' ) ); ?></h3>
+				<h3 id="comments-number" class="comments-header"><?php comments_number( __( '无回复', 'uridimmu' ), __( '单回复', 'uridimmu' ), __( '% 回复', 'uridimmu' ) ); ?></h3>
 
 				<?php do_atomic( 'before_comment_list' );// uridimmu_before_comment_list ?>
 
 				<?php if ( get_option( 'page_comments' ) ) : ?>
 					<div class="comments-nav">
-						<span class="page-numbers"><?php printf( __( 'Page %1$s of %2$s', 'uridimmu' ), ( get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1 ), get_comment_pages_count() ); ?></span>
+						<span class="page-numbers"><?php printf( __( '第 %1$s 页，共 %2$s 页', 'uridimmu' ), ( get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1 ), get_comment_pages_count() ); ?></span>
 						<?php previous_comments_link(); ?>
 						<?php next_comments_link(); ?>
 					</div><!-- .comments-nav -->

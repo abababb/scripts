@@ -52,8 +52,8 @@ get_header(); // Loads the header.php template. ?>
 
 							<?php endif; ?>
 
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'uridimmu' ), 'after' => '</p>' ) ); ?>
+							<?php the_content( __( '更多 <span class="meta-nav">&rarr;</span>', 'uridimmu' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( '页面:', 'uridimmu' ), 'after' => '</p>' ) ); ?>
 						</div><!-- .entry-content -->
 
 						<?php do_atomic( 'close_entry' ); // uridimmu_close_entry ?>

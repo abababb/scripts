@@ -36,12 +36,12 @@ get_header(); // Loads the header.php template. ?>
 
                         <header class="entry-header">
                             <?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
-                            <?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( 'By [entry-author] on [entry-published] [entry-edit-link before=" | "]', 'uridimmu' ) . '</div>' ); ?>
+                            <?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( '作者： [entry-author] 日期： [entry-published] [entry-edit-link before=" | "]', 'uridimmu' ) . '</div>' ); ?>
                         </header><!-- .entry-header -->
 
 						<div class="entry-summary">
 							<?php the_excerpt(); ?>
-							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'uridimmu' ), 'after' => '</p>' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( '页面 :', 'uridimmu' ), 'after' => '</p>' ) ); ?>
 						</div><!-- .entry-summary -->
 
                         <footer class="entry-footer">
