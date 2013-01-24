@@ -32,8 +32,9 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'AutoClose'
-Bundle 'phpcodesniffer.vim'
 Bundle 'minibufexpl.vim'
+Bundle 'HTML-AutoCloseTag'
+Bundle 'phpcomplete.vim'
 "}}}
 
 filetype plugin indent on     " required!
