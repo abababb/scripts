@@ -5,24 +5,6 @@ filetype off                   " required!
 "<Leader> key is ,
 let mapleader=","
 
-if has("win32")
-	let g:os = "win"
-else
-	let g:os = "unix"
-endif
-
-if g:os == "win"
-	set shell=C:/cygwin/bin/bash
-	set shellcmdflag=--login\ -c
-	set shellxquote=\"
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-	let $TMP=expand("$HOME/vim-tmp")
-	let $TEMP=expand("$HOME/vim-tmp")
-endif
-
-"line number
-set nu
-
 " Vundle init
 set rtp+=~/.vim/bundle/vundle/
 
@@ -65,7 +47,7 @@ Bundle 'FuzzyFinder'
 
 filetype plugin indent on     " required! 
 syntax enable
-colorscheme fruit
+colorscheme mustang
 runtime macros/matchit.vim
 let g:EasyMotion_leader_key = '<Space>'
 
@@ -394,6 +376,8 @@ inoremap jj <Esc>
 inoremap <C-z> <C-x><C-u>
 nnoremap JJJJ <Nop>
 
+map <Leader>f :FufFile<CR>
+map <Leader>e :!php %<CR>
 " Open Url on this line with the browser \w
 map <Leader>b :call Browser ()<CR>
 
@@ -401,15 +385,12 @@ map <Leader>b :call Browser ()<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" My handy window reset function
-nnoremap <C-a> :call SetWindows()<CR>
-
 " Show hidden characters (spaces, tabs, etc) 
 nmap <silent> <leader>s :set nolist!<CR>
 " PHPDoc commands
-"inoremap <C-d> <ESC>:call PhpDocSingle()<CR>i 
-"nnoremap <C-d> :call PhpDocSingle()<CR> 
-"vnoremap <C-d> :call PhpDocRange()<CR> 
+inoremap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <Leader>d :call PhpDocSingle()<CR> 
+vnoremap <Leader>d :call PhpDocRange()<CR> 
 " Ultra-amazing history viewer
 nnoremap <C-G> :GundoToggle<CR>
 "}}}
@@ -430,3 +411,67 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'active',
             \                   'active_filetypes' : [],
             \                   'passive_filetypes' : ['php'] }
+
+"{{{ Settings
+"set ttyscroll=0
+set hidden
+set history=1000
+set ruler
+set ignorecase
+set smartcase
+set title
+set scrolloff=3
+set wrapscan
+set clipboard=unnamed
+"set visualbell
+set backspace=indent,eol,start
+"Status line coolness
+set laststatus=2
+set showcmd
+" Search things
+set hlsearch
+set incsearch " ...dynamically as they are typed.
+" Folds
+set foldmethod=marker
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a
+set nohidden
+set shortmess+=filmnrxoOt
+set viewoptions=folds,options,cursor,unix,slash
+set virtualedit=onemore
+
+"Spaces, not tabs
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+"Speed highlighting up
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
+
+" set nu
+set nu
+" set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,default,latin1
+" No sound on errors.
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" NERDTree
+map <c-a> :NERDTreeToggle<CR>
+
+" taglist
+map <F6> :TlistToggle<CR>
+
+"set fold
+  "fold a block
+  " qa/{<cr>zf%q
+"   map <F7> 200@a
+
+"set clear php script
+  " qb?<\?php<cr>jc/?><cr><esc>:nohl<esc>q
+   map <Leader>c @b
+"}}}
