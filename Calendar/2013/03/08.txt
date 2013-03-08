@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-08T23:26:38+08:00
+
+====== Friday 08 Mar 2013 ======
+
+继续优化新装的gentoo，troubleshooting。
