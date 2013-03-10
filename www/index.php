@@ -1,4 +1,4 @@
 <?php
-$dir = './abc';
+$dir = '/';
 require_once "dir.php";
 ?>

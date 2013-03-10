@@ -2,7 +2,7 @@
 require_once "header.php";
 
 // get directory path
-if ($dir !== './abc') {
+if ($dir !== '/') {
 	$dir = $_GET['path'];
 //	echo $dir; //test
 }
