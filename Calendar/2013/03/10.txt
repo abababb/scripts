@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-10T20:44:06+08:00
+
+====== Sunday 10 Mar 2013 ======
+
+大致看完鸟哥www篇，把小说拷贝到自己的/var/www文件夹。练习php，将小说txt文件分页，做成网页方便阅读。
+现在用的这种方法主要有dir.php和file.php两个文件，使用GET方式来浏览不同的txt小说，url比较丑。
+例如：
+http://localhost:7777/file.php?path=./abc/2012b/%E3%80%90%E6%94%BB%E5%BE%B7%E6%97%A0%E9%87%8F%E6%96%87%E7%BB%84%E6%95%B4%E7%90%86%E3%80%91%E4%BA%92%E6%94%BB%E6%96%87/%E3%80%8A%E5%93%9F%EF%BC%8C%E6%9A%B4%E8%BA%81%E4%BA%86%E3%80%8BBY%E7%99%BE%E5%8A%A0%E8%A1%A3%20%28%E6%9A%B4%E8%BA%81%E6%94%BBX%E6%9A%B4%E8%BA%81%E6%94%BB%20%E5%BC%BA%E5%BC%BA%E4%BA%92%E6%94%BB%20%E7%8E%B0%E4%BB%A3%E9%83%BD%E5%B8%82%29.txt&p=2
+path用于找到对应文件，p为当前页码用于翻页。
+
+以后要多学习别人的源码和设计思想，总觉的现在写的代码太乱了。
