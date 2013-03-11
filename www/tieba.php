@@ -12,7 +12,7 @@ $un = urlencode(mb_convert_encoding($author, 'gb2312', 'utf-8'));
 
 
 // 利用百度高级搜索抓取作者在某贴吧的发言
-for ($i = 10; $i < 30; $i++) {      // $i为页数
+for ($i = 1; $i < 10; $i++) {      // $i为页数
 	$url = "http://tieba.baidu.com/f/search/ures?kw=$kw&qw=&rn=10&un=$un&sm=1&sd=&ed=&pn=$i";
 	$file .= file_get_contents("$url");
 }

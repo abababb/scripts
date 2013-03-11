@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-11T10:10:30+08:00
+
+====== Monday 11 March 2013 ======
+
+===== php =====
+[[http://www.php.net/manual/en/book.var.php|Variable handling]]
+看完。
+
+至此基础函数看完了，开始看一些常用组件函数。
+
+iconv、curl、apache、pcre等大致看了下。
+
+接着看SimpleXML和PDO。

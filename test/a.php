@@ -1,15 +1,23 @@
+<pre>
 <?php
-$file = '';
-$html = '';
-for ($i = 1; $i < 2; $i++) {
-    $file .= file_get_contents("http://tieba.baidu.com/f/search/ures?kw=linux&qw=&rn=10&un=%CE%E1%C4%CB%C0%CFw&sm=1&sd=&ed=&pn=$i");
-}
-preg_match_all("/<span class=\"p_title\">(?s).*?<\/span>/", $file, $out, PREG_SET_ORDER);
+// Get curl version array
+$version = curl_version();
 
-foreach ($out as $val) {
-    preg_match_all("/(?!a)*/", $val[0], $html, PREG_SET_ORDER);
-    $result .= $html;
-}
+// These are the bitfields that can be used 
+// to check for features in the curl build
+$bitfields = Array(
+            'CURL_VERSION_IPV6', 
+            'CURL_VERSION_KERBEROS4', 
+            'CURL_VERSION_SSL', 
+            'CURL_VERSION_LIBZ'
+            );
 
-echo $result;
+
+foreach($bitfields as $feature)
+{
+    echo $feature . ($version['features'] & constant($feature) ? ' matches' : ' does not match');
+    echo PHP_EOL;
+}
+var_dump($version);
 ?>
+</pre>
