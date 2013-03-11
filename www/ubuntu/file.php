@@ -17,34 +17,34 @@ $next_page = $page_num + 1;
 
 // previous and next page
 if ($previous_page == 0) {
-	$previous = "<span>上一页</span>";
+	$previous = "<span class='nav1'>上一页</span>";
 } else {
-	$previous = "<span><a href=\"file.php?path=$filename&p=$previous_page\">上一页</a></span>";
+	$previous = "<span class='nav1'><a href=\"file.php?path=$filename&p=$previous_page\">上一页</a></span>";
 }
 
 if ($next_page == $pages + 1) {
-	$next = "<span>下一页</span>";
+	$next = "<span class='nav1'>下一页</span>";
 }else {
-	$next = "<span><a href=\"file.php?path=$filename&p=$next_page\">下一页</a></span>";
+	$next = "<span class='nav1'><a href=\"file.php?path=$filename&p=$next_page\">下一页</a></span>";
 }
 
 // top navigation bar
 for ($p = 1; $p < $pages+1; $p++) {
-	$page = "<span><a href=\"file.php?path=$filename&p=$p\">$p </a></span>";
+	$page = "<span class='nav'><a href=\"file.php?path=$filename&p=$p\">$p </a></span>";
 	echo $page;
 }
 echo "</br>".$previous.'&nbsp;'.$next."</br>";
 
 // the content
 for ($i=($page_num-1)*200;$i<min(200+($page_num-1)*200, $line_num+1);$i++) {
-	$line = "<div>".iconv('GBK', 'UTF-8', $lines[$i])."</div>";
+	$line = "<div class='content'>".iconv('GBK', 'UTF-8', $lines[$i])."</div>";
 	echo $line;
 }
 
 // bottom navigation bar
 echo "</br>".$previous.'&nbsp;'.$next."</br>";
 for ($p = 1; $p < $pages+1; $p++) {
-	$page = "<span><a href=\"file.php?path=$filename&p=$p\">$p </a></span>";
+	$page = "<span class='nav'><a href=\"file.php?path=$filename&p=$p\">$p </a></span>";
 	echo $page;
 }
 ?>

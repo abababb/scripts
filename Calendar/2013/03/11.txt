@@ -10,6 +10,9 @@ Creation-Date: 2013-03-11T10:10:30+08:00
 
 至此基础函数看完了，开始看一些常用组件函数。
 
-iconv、curl、apache、pcre等大致看了下。
+iconv、curl、apache、pcre、SimpleXML和PDO等大致看了下。
+又搜了点.htaccess的资料看。
 
-接着看SimpleXML和PDO。
+晚上给/var/www/里的文件分类加密，并写了点简单css。
+
+

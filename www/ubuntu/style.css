@@ -1,0 +1,25 @@
+html { left top repeat; margin:0; padding:0; }
+body { margin:0; padding:0; font-family:'Trebuchet MS';font-size:18px}
+
+.content { margin-top:20px; font-size:18px; }
+
+
+.folder {
+    width:50%;
+    float:left;
+}
+.txt {
+    width:50%;
+    float:left;
+}
+.nav {
+    height: 55px;
+    line-height: 55px;
+    padding-left: 9px;
+}
+
+.nav1 {
+    margin-bottom: 30px;
+    margin-right: 15px;
+    width: 310px;
+}
