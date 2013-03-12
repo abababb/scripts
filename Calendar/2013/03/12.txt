@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-12T16:03:05+08:00
+
+====== Tuesday 12 March 2013 ======
+
+今天主要百度google了一些浏览器相关知识。用审查元素功能研究了下几个网站的源代码，学习浏览器自带的javascript调试功能的使用。
+下午把vimperator的文档好好看了下，新学会:cd，:pw，；；等命令，发现vimperator可以直接firefox里用命令打开gvim，配合复制命令，全键盘快速拷贝需要的代码到vim里。
+然后去developer.mozilla.org学习前端开发的一些知识，内容比较多，先看CSS相关内容。
+
