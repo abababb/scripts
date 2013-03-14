@@ -4,4 +4,7 @@ Creation-Date: 2013-03-13T17:15:33+08:00
 
 ====== Wednesday 13 Mar 2013 ======
 
-css ssh apache log
+继续学习css。
+看/var/log/里的各种文件。auth.log里发现ssh被人尝试入侵，查找资料后修改/etc/ssh/sshd_config文件。禁止root，仅允许特定用户通过ssh登录，改端口，等等。
+apache2/里的一些Log文件里可以看到有哪些ip访问我的网站。考虑以后做个脚本分析log。
+晚上ubuntu升级13.04测试版。上youtube看了点web design相关视频。

@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-14T10:55:44+08:00
+
+====== Thursday 14 March 2013 ======
+
+看MDN和WebPlatform.org的CSS教程，修改看小说脚本file.php的style.css。
