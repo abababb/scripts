@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-15T11:23:36+08:00
+
+====== Friday 15 March 2013 ======
+到stackoverfow搜索php template和learn php等问题，看别人对学习php的一些建议，寻找方向。暂定先熟悉CodeIgniter。自己直接写php代码又乱又不易读，需要一些框架和设计模式来规范。
+
+javascript相关资料链接。
+http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/
+
+https://developer.mozilla.org/en-US/learn/javascript
+
+http://docs.webplatform.org/wiki/Main_Page
+
