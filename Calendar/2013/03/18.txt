@@ -6,3 +6,6 @@ Creation-Date: 2013-03-18T15:28:07+08:00
 
 今天主要看CodeIgniter，把以前一些不明白的东西(route,url rewrite等）弄懂了。（看了linux里apache相关内容的功劳）
 学着使用<?=$var?>这样的简写来写view。比一大段<?php ?>里echo简洁清晰多了。
+开始熟悉database操作，给以前做的留言板增加更新和删除功能。
+
+晚上在MDN看javascript相关内容。边看边敲，用firebug执行。
