@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-18T15:28:07+08:00
+
+====== Monday 18 March 2013 ======
+
+今天主要看CodeIgniter，把以前一些不明白的东西(route,url rewrite等）弄懂了。（看了linux里apache相关内容的功劳）
+学着使用<?=$var?>这样的简写来写view。比一大段<?php ?>里echo简洁清晰多了。
