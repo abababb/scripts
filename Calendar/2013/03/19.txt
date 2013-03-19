@@ -5,5 +5,9 @@ Creation-Date: 2013-03-19T14:33:01+08:00
 ====== Tuesday 19 March 2013 ======
 
 完成留言板更新、删除功能。
-继续看CodeIgniter user_guide General Topics。
+看完CodeIgniter的user_guide之General Topics。
 
+晚上将ci搬到linux系统上，route发生问题，检查发现是.htaccess失效。apache的配置文件加入相应Directory,插入AllowOverride FileInfo。载入rewrite module后运行正常。
+然后给本地mysql增加用户、创建表，使留言板正常工作。最后改动css文件。
+
+接着继续看了点javascript。
