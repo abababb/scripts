@@ -5,3 +5,5 @@ Creation-Date: 2013-03-20T15:50:27+08:00
 ====== Wednesday 20 March 2013 ======
 
 CodeIgniter主看分页部分，google查找资料后，完成先前留言板分页功能。
+
+晚上加入book菜单，可以读本地文件夹内的txt文件并显示，尚不能将大txt文件分页。
