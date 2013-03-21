@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-21T09:37:34+08:00
+
+====== Thursday 21 March 2013 ======
+
+1.从book的controller里分出$root_dir和$book_dir，写入./application/config/book_dir.php。这样不同运行环境下只要改config文件即可。
+2.完成book的txt分页。
+
