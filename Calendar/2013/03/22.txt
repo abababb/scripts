@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-22T09:47:06+08:00
+
+====== Friday 22 March 2013 ======
+
+* 完成简单登录登出功能。
+* 整理文件（添加注释，折叠controller函数）。
+* 看form validation相关资料，给登录功能加入表单验证。
+* 比较freelancer和elance，感觉还是elance专业点，至少网站做的比freelancer好。浏览了一下上面的工作，看来自己前端方面的知识必须加强。
