@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-25T12:29:41+08:00
+
+====== Monday 25 March 2013 ======
+
+昨天下午看了点js，晚上去youtube找freelance相关视频看，然后去elance注册了个号,做了linux的测试。
+今天又测了php和html。
+结果是：php top20%，linux合格，html未通过。
+又找了点同行资料看，明确今后努力方向。
+
+下午测试了英语和wordpress。英语合格，wordpress差两分。
