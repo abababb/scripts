@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-28T09:43:13+08:00
+
+====== Thursday 28 March 2013 ======
+
+* 在stackoverflow搜ide相关信息，然后看了下vim的tips。
+* 搜索了解css框架相关资料。
+* 下载WebStorm和SublimeText尝试了下，有些地方感觉比vim方便，但是全部功能学起来又要花时间。vim应该也能配置出这些IDE的好用功能吧。
+* 搜索stackoverflow，找到解决.php文件里html内容的格式化方法，即：set ft=html ,然后选中html部分=。
+* [[http://eloquentjavascript.net/chapter6.html|Functional Programming]]看完。
