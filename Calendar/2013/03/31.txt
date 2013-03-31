@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-31T12:12:17+08:00
+
+====== Sunday 31 Mar 2013 ======
+
+继续看http://eloquentjavascript.net/chapter8.html
+Object-oriented Programming。感觉越来越难看懂了。
+开始看[[http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/|Learning JavaScript Design Patterns]]
+一边翻译一边看，希望理解能更深一点。
+

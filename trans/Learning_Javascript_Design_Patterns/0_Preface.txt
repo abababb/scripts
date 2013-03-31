@@ -1,0 +1,38 @@
+前言
+设计模式是指，对软件设计中经常出现的问题可以重复使用的解决方法。对于任何编程语言，设计模式都是非常值得探索的话题。
+其中一个原因就是，学习设计模式让我们学习前人的许多经验，帮助我们组织优化自己的代码结构，最终解决问题。
+设计模式同样提供给我们一套描述解法的术语。这比我们用单纯的语法来向别人描述问题要简单的多。
+本书主要探讨javascript的现代设计模式和经典设计模式。
+
+目标读者
+本书主要针对想要增加设计模式知识的职业开发者，讲述怎样应用设计模式到javascript语言里。
+本书假设读者对closures（闭包）, prototypal inheritance(原型继承)有一层基本概念。如果你觉得需要对这些相关话题深入阅读，本书提供参考文献清单。
+若你想要学习写出漂亮、结构组织清晰的代码，请继续往下阅读。
+
+鸣谢等，略过。
+
+参考文章
+尽管本书针对初、中级开发者，javascript基础还是需要掌握的。推荐这样几本：
+JavaScript: The Definitive Guide 作者 David Flanagan
+Eloquent JavaScript 作者 Marijn Haverbeke
+JavaScript Patterns 作者 Stoyan Stefanov
+Writing Maintainable JavaScript 作者 Nicholas Zakas
+JavaScript: The Good Parts 作者 Douglas Crockford
+
+目录：
+1.简介
+2.什么是设计模式
+3.模式测试，原型模式，以及三的法则
+4.一个设计模式的结构
+5.写设计模式
+6.反模式
+7.设计模式分类
+8.设计模式分类总结表
+9.javascript设计模式（子目录略，翻译到那里再写）
+10.javascript MV* 模式（MVC、MVP、MVVM等）
+11.现代模块化javascript设计模式（同上略）
+12.jQuery里的设计模式
+13.jQuery插件设计模式
+14.javascript 命名空间模式
+15.结论
+16.参考

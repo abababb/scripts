@@ -1,4 +1,0 @@
-AuthName "123"
-Authtype Basic
-AuthUserFile /var/www/ubuntu/pass.passwd
-require user tenkanse

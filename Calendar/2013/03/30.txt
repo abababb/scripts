@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-30T11:18:43+08:00
+
+====== Saturday 30 Mar 2013 ======
+
+继续看
+http://eloquentjavascript.net/chapter7.html
+看完，对找路的算法还是不太懂，大致有个印象以后再来研究吧。

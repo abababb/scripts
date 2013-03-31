@@ -4,4 +4,6 @@ Creation-Date: 2013-03-29T09:34:16+08:00
 
 ====== Friday 29 March 2013 ======
 
-
+看
+http://eloquentjavascript.net/chapter7.html
+下午单位培训。
