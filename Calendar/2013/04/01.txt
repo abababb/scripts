@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-04-01T08:43:59+08:00
+
+====== Monday 01 April 2013 ======
+
+* 看完Object-oriented Programming，有点点理解OO思想了，昆虫箱的例子也蛮有意思的。
+* 看第6章Functional Programming里的那篇例子文章：The Book of Programming。
+* http://eloquentjavascript.net/chapter9.html Modularity看完。
+* http://eloquentjavascript.net/chapter10.html Regular Expressions看完。
+* http://eloquentjavascript.net/chapter11.html Web programming: A crash course开始看。
+
