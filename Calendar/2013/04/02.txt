@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-04-02T09:26:19+08:00
+
+====== Tuesday 02 April 2013 ======
+
+* http://eloquentjavascript.net/chapter11.html Web programming: A crash course看完。
+* http://eloquentjavascript.net/chapter12.html DOM。
+* 单位培训CATIA。
+* 有新的图要画，标准滚床和旋转滚床。
