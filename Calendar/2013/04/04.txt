@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-04-04T11:44:37+08:00
+
+====== Thursday 04 Apr 2013 ======
+
+* 继续看 http://eloquentjavascript.net/chapter13.html Browser Events。

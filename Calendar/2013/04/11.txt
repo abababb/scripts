@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-04-11T19:18:00+08:00
+
+====== Thursday 11 Apr 2013 ======
+
+这周单位事比较忙。
+eloquent javascript看完后就没继续看下去了。
