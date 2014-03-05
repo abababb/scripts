@@ -1,0 +1,38 @@
+解包nss.npa,voice.npa
+
+提取文本
+pcregrep -M '<PRE @box0>(\n|.)*?<\/PRE>' *.nss > a.nss
+
+日文转码
+iconv -f shift_jisx0213 -t utf-8 a.nss > b.nss
+
+vim处理
+替换voice
+:%s/<voice.*src="\(.*\)">/dwave 0,"\1\.ogg"/g 
+
+删除括号内的代码
+:%s/{\_.\{-}\}//g  
+
+删除//以及后面的注释
+:%g/\/\/.*/d   
+删除其他多余内容
+:%s/dm.*\.nss.*//g   
+:%s/\[text.*\]//g  
+:%s/<\/PRE>//g   
+:%s/<.*>//g  
+/}之后手动删除一些剩余的代码
+
+删除空白行
+:%g/^\s*$/d 
+
+每行后面加\
+:%s/\(.*\)/\1\\/g     
+
+删除bgm和bg行尾的\
+:%s/dwave\(.*\)\\/dwave\1/g         
+
+每句话前增加黑背景
+：%s/\(.*\)\\/bg #000000,10,500:print 1\r\1\\/g
+
+最后增加ons系统菜单     
+

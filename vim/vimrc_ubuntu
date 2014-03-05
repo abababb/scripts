@@ -1,5 +1,6 @@
 set nocompatible               " be iMproved
 
+set fileencodings=utf-8,gbk,ucs-born,cp936
 filetype off                   " required!
 
 "<Leader> key is ,
@@ -10,44 +11,38 @@ set rtp+=~/.vim/bundle/vundle/
 
 " Require Vundle
 try
-	call vundle#rc()
+    call vundle#rc()
 catch
-	echohl Error | echo "Vundle is not installed. Run 'cd ~/.vim/ && git submodule init && git submodule update'" | echohl None
-	"exit
+    echohl Error | echo "Vundle is not installed. Run 'cd ~/.vim/ && git submodule init && git submodule update'" | echohl None
 endtry
 
 
 "{{{ Vundle Bundles!
-Bundle 'gmarik/vundle'
+if exists(':Bundle')
+    Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" repos on github
-"Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdtree.git'
-"Bundle 'wincent/Command-T.git'
-Bundle 'joonty/vim-phpqa.git'
-Bundle 'joonty/vim-sauce.git'
-Bundle 'joonty/vdebug.git'
-"Bundle 'joonty/vim-phpunitqf.git'
-Bundle 'joonty/vim-taggatron.git'
-Bundle 'tpope/vim-rails.git'
-Bundle 'greyblake/vim-preview.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'ervandew/supertab.git'
-Bundle 'vim-ruby/vim-ruby.git'
-Bundle 'msanders/snipmate.vim.git'
-Bundle 'scrooloose/syntastic.git'
-" vim-scripts repos
-Bundle 'taglist.vim'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+    " My Bundles here:
+    "
+    " repos on github
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'scrooloose/nerdtree.git'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'joonty/vim-phpqa.git'
+    Bundle 'joonty/vdebug.git'
+    Bundle 'tpope/vim-fugitive.git'
+    Bundle 'tpope/vim-rails.git'
+    Bundle 'ervandew/supertab.git'
+    Bundle 'scrooloose/syntastic.git'
+    Bundle 'rking/ag.vim'
+    Bundle 'othree/html5.vim.git'
+    Bundle 'SirVer/ultisnips.git'
+    "Bundle 'snipMate'
+end
 "}}}
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 syntax enable
-colorscheme mustang
+colorscheme rootwater
 runtime macros/matchit.vim
 let g:EasyMotion_leader_key = '<Space>'
 
@@ -66,11 +61,11 @@ endfunction
 "}}}
 "{{{ Source vimrc files in a directory
 function! SourceAllFiles(dir)
-	let l:findop=system("find ".a:dir." -name \"*.vimrc\"")
-	let l:sourcenames=split(l:findop,"\n")
-	for fname in l:sourcenames
-		exec "source ".fname
-	endfor
+    let l:findop=system("find ".a:dir." -name \"*.vimrc\"")
+    let l:sourcenames=split(l:findop,"\n")
+    for fname in l:sourcenames
+        exec "source ".fname
+    endfor
 endfunction
 
 call SourceAllFiles($HOME."/.vim/vimrcs")
@@ -84,7 +79,7 @@ function! Browser ()
 endfunction
 
 "}}}
-"{{{ Close quickfix with main window close 
+"{{{ Close quickfix with main window close
 au BufEnter * call MyLastWindow()
 function! MyLastWindow()
     " if the window is quickfix go on
@@ -187,7 +182,7 @@ command! Sass call SassCompile()
 autocmd BufWritePost *.scss call SassCompile()
 function! SassCompile()
     if g:sass_enabled == 0
-      return
+        return
     endif
     let curfile = expand('%:p')
     let inlist = 0
@@ -236,102 +231,38 @@ function! s:use_tabs()
     set noexpandtab
 endfunction
 "}}}
-"{{{ Get a dictionary of expected windows and their numbers
-function! GetKnownWindows()
-    let l:wins=[] 
-    let l:ret = {}
-    windo call add(l:wins, [winnr(), bufname('%')]) 
-    for list in l:wins
-       if list[1] =~ "^.*__Tag_List__$"
-           let l:ret['taglist'] = list[0]
-       elseif list[1] == "-MiniBufExplorer-"
-           let l:ret['minibuf'] = list[0]
-       elseif list[1] =~ "NERD_tree_.*"
-           let l:ret['nerdtree'] = list[0]
-       else
-           if !has_key(l:ret,'other')
-               let l:ret['other'] = list[0]
-           endif
-       endif
-    endfor
-    return l:ret
-endfunction
-" }}}
-" {{{ Reset window arrangement (to the way I like it) if things mess up
-function! SetWindows()
-	" Always run this, as it refreshes with current dir
-	exec 'NERDTree'
-    exec 'silent res 500'
-    let l:windows = GetKnownWindows()
-    if !has_key(l:windows,'other')
-        new
-    endif
-    if !has_key(l:windows,'nerdtree')
-        exec 'silent 1wincmd H'
-        let l:windows = GetKnownWindows()
-    endif
-    "if !has_key(l:windows,'taglist')
-    "    exec 'TlistToggle'
-    "    exec 'silent 1wincmd L'
-    "    let l:windows = GetKnownWindows()
-    "endif
-
-    if has_key(l:windows,'minibuf')
-        exec 'silent '.l:windows['minibuf'].'wincmd W'
-        exec 'silent '.l:windows['minibuf'].'wincmd K'
-        exec 'silent res 2'
-        let l:windows = GetKnownWindows()
-    endif
-
-    exec 'silent '.l:windows['nerdtree'].'wincmd W'
-    exec 'silent '.l:windows['nerdtree'].'wincmd H'
-    exec 'silent 500winc < | 30winc >'
-    exec 'normal gg'
-    let l:windows = GetKnownWindows()
-
-    "exec 'silent '.l:windows['taglist'].'wincmd W'
-    "exec 'silent '.l:windows['taglist'].'wincmd L'
-    "exec 'silent 500winc < | 30winc >'
-
-    "let l:windows = GetKnownWindows()
-
-    exec 'silent '.l:windows['other'].'wincmd W'
-    exec 'silent res 500'
-
-endfunction
-"}}}
 "{{{ Wipeout buffers not used
 function! Wipeout()
-  " list of *all* buffer numbers
-  let l:buffers = range(1, bufnr('$'))
+    " list of *all* buffer numbers
+    let l:buffers = range(1, bufnr('$'))
 
-  " what tab page are we in?
-  let l:currentTab = tabpagenr()
-  try
-    " go through all tab pages
-    let l:tab = 0
-    while l:tab < tabpagenr('$')
-      let l:tab += 1
+    " what tab page are we in?
+    let l:currentTab = tabpagenr()
+    try
+        " go through all tab pages
+        let l:tab = 0
+        while l:tab < tabpagenr('$')
+            let l:tab += 1
 
-      " go through all windows
-      let l:win = 0
-      while l:win < winnr('$')
-        let l:win += 1
-        " whatever buffer is in this window in this tab, remove it from
-        " l:buffers list
-        let l:thisbuf = winbufnr(l:win)
-        call remove(l:buffers, index(l:buffers, l:thisbuf))
-      endwhile
-    endwhile
+            " go through all windows
+            let l:win = 0
+            while l:win < winnr('$')
+                let l:win += 1
+                " whatever buffer is in this window in this tab, remove it from
+                " l:buffers list
+                let l:thisbuf = winbufnr(l:win)
+                call remove(l:buffers, index(l:buffers, l:thisbuf))
+            endwhile
+        endwhile
 
-    " if there are any buffers left, delete them
-    if len(l:buffers)
-      execute 'bwipeout' join(l:buffers)
-    endif
-  finally
-    " go back to our original tab page
-    execute 'tabnext' l:currentTab
-  endtry
+        " if there are any buffers left, delete them
+        if len(l:buffers)
+            execute 'bwipeout' join(l:buffers)
+        endif
+    finally
+        " go back to our original tab page
+        execute 'tabnext' l:currentTab
+    endtry
 endfunction
 "}}}
 "{{{ Find and replace in multiple files
@@ -357,6 +288,57 @@ endfunction
 "{{{ Link 'Call' to 'call', for mistyping
 command! -nargs=* -complete=function Call exec 'call '.<f-args>
 "}}}
+"{{{ Toggle relative and absolute line numbers
+function! LineNumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+"}}}
+"{{{ Toggle the arrow keys
+
+let g:arrow_keys_enabled = 1
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+function! ArrowKeysToggle()
+  if g:arrow_keys_enabled == 1
+    call DisableArrowKeys()
+    echo "Disabling arrow keys"
+    let g:arrow_keys_enabled = 0
+  else
+    call EnableArrowKeys()
+    echo "Enabling arrow keys"
+    let g:arrow_keys_enabled = 1
+  end
+endfunc
+
+function! EnableArrowKeys()
+  noremap <Up> k
+  inoremap <Up> <Up>
+  noremap <Down> j
+  inoremap <Down> <Down>
+  noremap <Left> h
+  inoremap <Left> <Left>
+  noremap <Right> l
+  inoremap <Right> <Right>
+endfunc
+
+function! DisableArrowKeys()
+  noremap <Up> <nop>
+  inoremap <Up> <nop>
+  noremap <Down> <nop>
+  inoremap <Down> <nop>
+  noremap <Left> <nop>
+  inoremap <Left> <nop>
+  noremap <Right> <nop>
+  inoremap <Right> <nop>
+endfunc
+"}}}
 "}}}
 
 "Fugitive (Git) in status line
@@ -366,43 +348,75 @@ set statusline=%{exists(\"*fugitive#statusline\")?\"branch:\ \".fugitive#statusl
 let g:NERDTreeMapHelp = "h"
 
 " Set font for GUI (e.g. GVim)
-set guifont=UbuntuMono\ Regular\ 13
-
+if has("gui_running")
+    set guifont=Liberation\ Mono\ 14
+endif
 
 "{{{ Key Maps
+" Stop that damn ex mode
+nnoremap Q <nop>
 
-"Escape insert with 'jj', as you probably won't type that
-inoremap jj <Esc>
-inoremap <C-z> <C-x><C-u>
-nnoremap JJJJ <Nop>
+" omnicomp
+inoremap <Leader>o <C-x><C-o>
 
-map <Leader>f :FufFile<CR>
+" call browser
+nnoremap <Leader>br :call Browser ()<CR>
+
+" set breakpoint
+nnoremap <Leader>v :Breakpoint<CR>
+
+" Quick nohl
+nnoremap <Leader>h :nohl<CR>
+
+" CtrlP
+nnoremap <Leader>t :CtrlP getcwd()<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" execute php
 map <Leader>e :!php %<CR>
-" Open Url on this line with the browser \w
-map <Leader>b :call Browser ()<CR>
+
+" move changed files to ~/change
+map <Leader>m :!cp % ~/change/<CR>
 
 " Instead of 1 line, move 3 at a time
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Show hidden characters (spaces, tabs, etc) 
+" Show hidden characters (spaces, tabs, etc)
 nmap <silent> <leader>s :set nolist!<CR>
+
 " PHPDoc commands
-inoremap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <Leader>d :call PhpDocSingle()<CR> 
-vnoremap <Leader>d :call PhpDocRange()<CR> 
-" Ultra-amazing history viewer
-nnoremap <C-G> :GundoToggle<CR>
+inoremap <leader>d <ESC>:call PhpDocSingle()<CR>i
+nnoremap <leader>d :call PhpDocSingle()<CR>
+vnoremap <leader>d :call PhpDocRange()<CR>
+
+" Fugitive shortcuts
+nnoremap <Leader>c :Gcommit -a<CR>i
+nnoremap <Leader>g :Git
+nnoremap <Leader>a :Git add %:p<CR>
 "}}}
+
+" Quick insert mode exit
+imap jj <Esc>
+
+" Tree of nerd
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" Show trailing white space
+"match ExtraSpace /\s\+$/
+"autocmd BufWinEnter * match ExtraSpace /\s\+$/
+"autocmd InsertEnter * match ExtraSpace /\s\+\%#\@<!$/
+"autocmd InsertLeave * match ExtraSpace /\s\+$/
+"autocmd BufWinLeave * call clearmatches()
+"nnoremap <leader>z :%s/\s\+$//<cr>:let @/=''<CR>
+
+let g:ctrlp_working_path_mode = 'ra'
 
 " Tab completion - local
 let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
 
 " Vdebug options
 let g:vdebug_options = {"on_close":"detach"}
-
-" Vim snippets location
-let g:snippets_dir = "~/.vim/snippets/"
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -412,66 +426,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
             \                   'active_filetypes' : [],
             \                   'passive_filetypes' : ['php'] }
 
-"{{{ Settings
-"set ttyscroll=0
-set hidden
-set history=1000
-set ruler
-set ignorecase
-set smartcase
-set title
-set scrolloff=3
-set wrapscan
-set clipboard=unnamed
-"set visualbell
-set backspace=indent,eol,start
-"Status line coolness
-set laststatus=2
-set showcmd
-" Search things
-set hlsearch
-set incsearch " ...dynamically as they are typed.
-" Folds
-set foldmethod=marker
-set wildmenu
-set wildmode=list:longest,full
-set mouse=a
-set nohidden
-set shortmess+=filmnrxoOt
-set viewoptions=folds,options,cursor,unix,slash
-set virtualedit=onemore
+let NERDTreeIgnore = ['\.pyc$','\.sock$']
 
-"Spaces, not tabs
-set shiftwidth=4
-set tabstop=4
-set expandtab
+let g:vdebug_features = {'max_depth':3}
 
-"Speed highlighting up
-set nocursorcolumn
-set nocursorline
-syntax sync minlines=256
-
-" set nu
-set nu
-" set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,gbk,default,latin1
-" No sound on errors.
-set noerrorbells
-set novisualbell
-set t_vb=
-
-" NERDTree
-map <c-a> :NERDTreeToggle<CR>
-
-" taglist
-map <F6> :TlistToggle<CR>
-
-"set fold
-  "fold a block
-  " qa/{<cr>zf%q
-"   map <F7> 200@a
-
-"set clear php script
-  " qb?<\?php<cr>jc/?><cr><esc>:nohl<esc>q
-   map <Leader>c @b
-"}}}
+" set fold method
+set foldmethod=indent
