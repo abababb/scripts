@@ -24,40 +24,24 @@ ruby、nkf
 
 3.  #### 新建kao.rb
 
-    > \# encoding: utf-8
-    >     
-    > \# original
-    >     
-    > \# orange kaomoji list -> anthy dictionary converter
-    >     
-    > \# 2005/12/07 S.Okano
-    >     
-    >     
-    > while line = gets
-    >     
-    > > line = line.gsub(/\r\n/, "\n")
-    > > 
-    > > str = line.split(/\t/)
-    > > 
-    > > next unless str[2]
-    > > 
-    > > next unless str[2].chop == "顔文字"
-    > > 
-    > > print str[0]
-    > > 
-    > > \# 単語の出現頻度は 1
-    > > 
-    > > print " 1 "
-    > > 
-    > > puts str[1].gsub(/ /, "\\ ")
-    > > 
-    > > \# 名詞でいいかな?
-    > > 
-    > > puts "品詞\t=\t人名"
-    > > 
-    > > puts ""
-    >     
-    > end
+        # encoding: utf-8
+        # original
+        # orange kaomoji list -> anthy dictionary converter
+        # 2005/12/07 S.Okano
+            
+        while line = gets
+            line = line.gsub(/\r\n/, "\n")
+            str = line.split(/\t/)
+            next unless str[2]
+            next unless str[2].chop == "顔文字"
+            print str[0]
+            # 単語の出現頻度は 1
+            print " 1 "
+            puts str[1].gsub(/ /, "\\ ")
+            # 名詞でいいかな?
+            puts "品詞\t=\t人名"
+            puts ""
+        end
 
 4.  #### 生成字典
 
