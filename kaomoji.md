@@ -8,11 +8,11 @@ ubuntu日文输入法anthy顔文字字典设置
 ruby、nkf
 
 ### 步骤： 
-1.  #### 备份原字典
+1.   备份原字典
 
     `anthy-dic-tool --utf8 --dump > backup.txt`
 
-2.  #### 下载顔文字字典
+2.   下载顔文字字典
 
     <http://www.facemark.jp/download.htm>
 
@@ -22,7 +22,7 @@ ruby、nkf
     >      
     > 顔文字一覧　テキスト辞書インターネット対応
 
-3.  #### 新建kao.rb
+3.   新建kao.rb
 
         # encoding: utf-8
         # original
@@ -43,14 +43,14 @@ ruby、nkf
             puts ""
         end
 
-4.  #### 生成字典
+4.   生成字典
 
     `nkf -u list.txt | ruby kao.rb | anthy-dic-tool --utf8 --append`
 
-5.  #### 导入
+5.   导入
 
     `nkf -u list.txt | ruby kao.rb | anthy-dic-tool --utf8 --load`
 
-6.  #### 更新字典
+6.   更新字典
 
     `sudo update-anthy-dics`  
