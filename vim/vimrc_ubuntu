@@ -25,18 +25,23 @@ if exists(':Bundle')
     "
     " repos on github
     Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'kchmck/vim-coffee-script'
     Bundle 'scrooloose/nerdtree.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'joonty/vim-phpqa.git'
+    Bundle 'joonty/vim-sauce.git'
     Bundle 'joonty/vdebug.git'
+    Bundle 'joonty/vim-phpunitqf.git'
+    "Bundle 'joonty/vim-taggatron.git'
     Bundle 'tpope/vim-fugitive.git'
     Bundle 'tpope/vim-rails.git'
+    Bundle 'tpope/vim-markdown.git'
     Bundle 'ervandew/supertab.git'
     Bundle 'scrooloose/syntastic.git'
+    Bundle 'joonty/vim-tork.git'
     Bundle 'rking/ag.vim'
     Bundle 'othree/html5.vim.git'
     Bundle 'SirVer/ultisnips.git'
-    "Bundle 'snipMate'
 end
 "}}}
 
@@ -375,6 +380,9 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " execute php
 map <Leader>e :!php %<CR>
 
+" compass compile sass
+map <Leader>c :!compass compile<CR>
+
 " move changed files to ~/change
 map <Leader>m :!cp % ~/change/<CR>
 
@@ -391,7 +399,7 @@ nnoremap <leader>d :call PhpDocSingle()<CR>
 vnoremap <leader>d :call PhpDocRange()<CR>
 
 " Fugitive shortcuts
-nnoremap <Leader>c :Gcommit -a<CR>i
+" nnoremap <Leader>c :Gcommit -a<CR>i
 nnoremap <Leader>g :Git
 nnoremap <Leader>a :Git add %:p<CR>
 "}}}
