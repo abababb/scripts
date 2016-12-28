@@ -29,7 +29,8 @@ $testArray = array(
 
 //先按高优先级条件从低到高，再按低优先级条件从高到低排序
 usort($testArray, function ($item1, $item2) {
-    return $item1['high'] <=> $item2['high'] ?: $item2['low'] <=> $item1['low'];
+    //return $item1['high'] <=> $item2['high'] ?: $item2['low'] <=> $item1['low'];
+    return [$item1['high'], $item2['low']] <=> [$item2['high'], $item1['low']];
 });
 
 var_export($testArray);exit;
