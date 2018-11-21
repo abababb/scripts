@@ -11,13 +11,8 @@ $keys = array_keys($c);
 
 $len = 5;
 $arr = ['I', 'l'];
-$queue = [];
-for ($i = 0; $i < $len; $i++) {
-    if (!isset($queue[$i]) || !$queue[$i]) {
-        foreach ($arr as $appendChar) {
-            $queue[$i + 1][] = $appendChar;
-        }
-    }
+$queue = [ 1 => $arr ];
+for ($i = 1; $i < $len; $i++) {
     foreach ($queue[$i] as $elem) {
         foreach ($arr as $appendChar) {
             $queue[$i + 1][] = $elem.$appendChar;
