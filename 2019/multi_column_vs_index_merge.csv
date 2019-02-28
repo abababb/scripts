@@ -1,0 +1,7 @@
+'id','select_type','table','partitions','type','possible_keys','key','key_len','ref','rows','filtered','Extra'
+'1','SIMPLE','stock_change',NULL,'ref','IDX_8A712CB65080ECDE','IDX_8A712CB65080ECDE','5','const','1691399','10.00','Usingwhere'
+'1','SIMPLE','stock_change',NULL,'ALL',NULL,NULL,NULL,NULL,'3382799','1.00','Usingwhere'
+'1','SIMPLE','stock_change',NULL,'index_merge','IDX_8A712CB6E308AC6F,IDX_8A712CB65080ECDE','IDX_8A712CB6E308AC6F,IDX_8A712CB65080ECDE','5,5',NULL,'3356','100.00','Usingintersect(IDX_8A712CB6E308AC6F,IDX_8A712CB65080ECDE);Usingwhere'
+'1','SIMPLE','stock_change',NULL,'ref','IDX_8A712CB6E308AC6F','IDX_8A712CB6E308AC6F','5','const','6714','10.00','Usingwhere'
+'1','SIMPLE','stock_change',NULL,'ref','IDX_8A712CB6E308AC6F,IDX_8A712CB65080ECDE,IDX_material_warehouse','IDX_material_warehouse','10','const,const','1947','100.00',NULL
+'1','SIMPLE','stock_change',NULL,'ref','IDX_8A712CB6E308AC6F,IDX_8A712CB65080ECDE,IDX_warehouse_material','IDX_warehouse_material','10','const,const','1947','100.00',NULL
